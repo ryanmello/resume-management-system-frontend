@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className={menuStyles}>
         <ul>
           {links.map((items) => (
-            <li key={items.href}>
+            <li key={items.href} onClick={ToggleOpenMenu}>
               <Link to={items.href}>{items.label}</Link>
             </li>
           ))}

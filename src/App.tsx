@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, lazy, Suspense } from "react";
 import { ThemeContext } from "./context/theme.context";
 import Navbar from "./components/navbar/Navbar.component";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
 import Companies from "./pages/companies/Companies";
 import Jobs from "./pages/jobs/Jobs";
 import Candidates from "./pages/candidates/Candidates";
+import Spinner from "./components/spinner/Spinner";
+
+const Home = lazy(() => import("./pages/home/Home"));
 
 function App() {
   const {darkMode} = useContext(ThemeContext);
@@ -16,12 +18,14 @@ function App() {
     <div className={appStyles}>
       <Navbar/>
       <div className="wrapper">
-        <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/companies" element={<Companies/>}></Route>
-          <Route path="/jobs" element={<Jobs/>}></Route>
-          <Route path="/candidates" element={<Candidates/>}></Route>
-        </Routes>
+        <Suspense fallback={<Spinner/>}>
+          <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path="/companies" element={<Companies/>}></Route>
+            <Route path="/jobs" element={<Jobs/>}></Route>
+            <Route path="/candidates" element={<Candidates/>}></Route>
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );

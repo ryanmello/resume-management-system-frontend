@@ -2,12 +2,12 @@ import { useContext, lazy, Suspense } from "react";
 import { ThemeContext } from "./context/theme.context";
 import Navbar from "./components/navbar/Navbar.component";
 import { Routes, Route } from "react-router-dom";
-import Companies from "./pages/companies/Companies";
 import Jobs from "./pages/jobs/Jobs";
 import Candidates from "./pages/candidates/Candidates";
 import Spinner from "./components/spinner/Spinner";
 
 const Home = lazy(() => import("./pages/home/Home"));
+const Companies = lazy(() => import("./pages/companies/Companies"));
 
 function App() {
   const {darkMode} = useContext(ThemeContext);

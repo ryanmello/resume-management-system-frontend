@@ -1,5 +1,6 @@
+@import "../../mixins";
+
 .heading{
+    @include d-flex(row, space-between, center);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
 }

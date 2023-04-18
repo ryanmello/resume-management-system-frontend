@@ -8,6 +8,7 @@ import Spinner from "./components/spinner/Spinner";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Companies = lazy(() => import("./pages/companies/Companies"));
+const AddCompany = lazy(() => import("./pages/companies/AddCompany"));
 
 function App() {
   const {darkMode} = useContext(ThemeContext);
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/companies" element={<Companies/>}></Route>
+            <Route path="/companies/add" element={<AddCompany/>}></Route>
             <Route path="/jobs" element={<Jobs/>}></Route>
             <Route path="/candidates" element={<Candidates/>}></Route>
           </Routes>

@@ -5,10 +5,12 @@ import { Add } from "@mui/icons-material";
 import { IJob } from "../../types/global.typing";
 import httpModule from "../../helpers/http.module";
 import JobsGrid from "../../components/jobs/JobsGrid";
+import { useNavigate } from "react-router-dom";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState<IJob[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const redirect = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -29,7 +31,7 @@ const Jobs = () => {
     <div className="content jobs">
       <div className="heading">
         <h2>Jobs</h2>
-        <Button variant="outlined">
+        <Button variant="outlined" onClick={() => redirect("/jobs/add")}>
           <Add />
         </Button>
       </div>

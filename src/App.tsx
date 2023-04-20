@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Jobs from "./pages/jobs/Jobs";
 import Candidates from "./pages/candidates/Candidates";
 import Spinner from "./components/spinner/Spinner";
+import AddJob from "./pages/jobs/AddJob";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Companies = lazy(() => import("./pages/companies/Companies"));
@@ -23,8 +24,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/companies" element={<Companies/>}></Route>
-            <Route path="/companies/add" element={<AddCompany/>}></Route>
+              <Route path="/companies/add" element={<AddCompany/>}></Route>
             <Route path="/jobs" element={<Jobs/>}></Route>
+              <Route path="/jobs/add" element={<AddJob/>}></Route>
             <Route path="/candidates" element={<Candidates/>}></Route>
           </Routes>
         </Suspense>

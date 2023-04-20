@@ -6,7 +6,6 @@ import { ICompany } from "../../types/global.typing";
 import { Button, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Add } from "@mui/icons-material";
-import { DataGrid } from "@mui/x-data-grid";
 import CompaniesGrid from "../../components/companies/CompaniesGrid";
 
 const Companies = () => {

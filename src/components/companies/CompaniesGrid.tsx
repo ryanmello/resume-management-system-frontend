@@ -7,9 +7,9 @@ import moment from 'moment';
 import { ICompany } from '../../types/global.typing';
 
 const column: GridColDef[] = [
-    {field: "id", headerName: "ID", width: 100},
+    {field: "id", headerName: "ID", width: 200},
     {field: "name", headerName: "Name", width: 200},
-    {field: "size", headerName: "Size", width: 150},
+    {field: "size", headerName: "Size", width: 200},
     {field: "createdAt", headerName: "Created", width: 200, 
         renderCell: (params) => moment(params.row.createdAt).format("YYYY-MM-DD"),
     },

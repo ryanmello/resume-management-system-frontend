@@ -18,3 +18,31 @@ export interface IJob {
     companyName: string;
     createdAt: string;
 }
+
+export interface ICreateJobDto {
+    title: string;
+    level: string;
+    companyId: string;
+}
+
+export interface ICandidate {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    coverLetter: string;
+    resumeUrl: string;
+    jobId: string;
+    jobTitle: string;
+    createdAt: string;
+}
+
+export interface ICreateCandidateDto{
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    coverLetter: string;
+    jobId: string;
+}

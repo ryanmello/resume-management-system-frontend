@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import httpModule from "../../helpers/http.module";
-import "./add-company.scss"
+import "./add-company.scss";
 
 const AddCompany = () => {
   const redirect = useNavigate();
@@ -20,19 +20,20 @@ const AddCompany = () => {
   });
 
   const handleClickSaveBtn = () => {
-    if(company.name === "" || company.size === ""){
+    if (company.name === "" || company.size === "") {
       alert("Please enter a name and size");
       return;
     }
 
-    httpModule.post("company/create", company)
-      .then(response => redirect("/companies"))
+    httpModule
+      .post("company/create", company)
+      .then((response) => redirect("/companies"))
       .catch((error) => console.log(error));
-  }
+  };
 
   const handleClickBackBtn = () => {
     redirect("/companies");
-  }
+  };
 
   return (
     <div className="content">
@@ -58,10 +59,18 @@ const AddCompany = () => {
           </Select>
         </FormControl>
         <div className="btns">
-          <Button variant="outlined" color="primary" onClick={handleClickSaveBtn}>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleClickSaveBtn}
+          >
             Save
           </Button>
-          <Button variant="outlined" color="primary" onClick={handleClickBackBtn}>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleClickBackBtn}
+          >
             Back
           </Button>
         </div>

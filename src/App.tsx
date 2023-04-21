@@ -2,14 +2,15 @@ import { useContext, lazy, Suspense } from "react";
 import { ThemeContext } from "./context/theme.context";
 import Navbar from "./components/navbar/Navbar.component";
 import { Routes, Route } from "react-router-dom";
-import Jobs from "./pages/jobs/Jobs";
-import Candidates from "./pages/candidates/Candidates";
 import Spinner from "./components/spinner/Spinner";
-import AddJob from "./pages/jobs/AddJob";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Companies = lazy(() => import("./pages/companies/Companies"));
 const AddCompany = lazy(() => import("./pages/companies/AddCompany"));
+const Jobs = lazy(() => import("./pages/jobs/Jobs"));
+const AddJob = lazy(() => import("./pages/jobs/AddJob"));
+const Candidates = lazy(() => import("./pages/candidates/Candidates"));
+const AddCandidate = lazy(() => import("./pages/candidates/AddCandidate"))
 
 function App() {
   const {darkMode} = useContext(ThemeContext);
@@ -28,6 +29,7 @@ function App() {
             <Route path="/jobs" element={<Jobs/>}></Route>
               <Route path="/jobs/add" element={<AddJob/>}></Route>
             <Route path="/candidates" element={<Candidates/>}></Route>
+              <Route path="/candidates/add" element={<AddCandidate/>}></Route>
           </Routes>
         </Suspense>
       </div>

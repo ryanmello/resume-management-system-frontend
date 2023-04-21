@@ -4,6 +4,7 @@ import React from "react";
 import "./candidates-grid.scss";
 import { ICandidate } from "../../types/global.typing";
 import { baseUrl } from "../../constants/url.constants";
+import { PictureAsPdf } from "@mui/icons-material"; 
 
 const column: GridColDef[] = [
   { field: "id", headerName: "ID", width: 100 },
@@ -18,7 +19,7 @@ const column: GridColDef[] = [
     width: 150,
     renderCell: (params) => (
       <a href={`${baseUrl}/candidate/download/${params.row.resumeUrl}`} download>
-        link
+        <PictureAsPdf />
       </a>
     ),
   },
